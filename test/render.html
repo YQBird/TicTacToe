@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
+	<script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
+	<script src="render.js"></script>
+	<script>
+    var itemX = "X";
+    var itemO = "O";
+    var itemE = " ";
+
+	var board = {
+	block1: itemX,
+	block2: itemE,
+	block3: itemE,
+	block4: itemX,
+	block5: itemE,
+	block6: itemE,
+	block7: itemE,
+	block8: itemE,
+	block9: itemE
+    }
+	QUnit.test("Dom render test", function(assert) {	
+		render(board);
+	    var links = document.getElementById("board").getElementsByTagName("div");
+	                
+	                
+	    assert.equal(links[0].childNodes[0].nodeValue, "X" );
+	    assert.equal(links[3].childNodes[0].nodeValue, "X" );
+	    assert.equal(links[2].childNodes[0].nodeValue, " " );
+	});
+
+	board.block7 = "O";
+	board.block5 = "X";	
+
+    QUnit.test("Dom render test", function(assert) {	
+		render(board);
+	    var links = document.getElementById("board").getElementsByTagName("div");
+	                
+	                
+	    assert.equal(links[6].childNodes[0].nodeValue, "O" );
+	    assert.equal(links[4].childNodes[0].nodeValue, "X" );
+	});
+
+	</script>
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture">
+        <div id="board"></div>
+    </div>
+ 
+
+</body>
+</html>

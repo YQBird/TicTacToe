@@ -1,0 +1,10 @@
+#board > div{
+    width:100px;
+    height: 100px;
+    line-height: 100px;
+    vertical-align: center;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 50px;
+    display: table-cell;
+}

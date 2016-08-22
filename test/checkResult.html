@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
+	<script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
+	<script src="checkResult.js"></script>
+	<script>
+	var board1 = {
+	block1: "X",
+	block2: "X",
+	block3: "X",
+	block4: "X",
+	block5: "X",
+	block6: "X",
+	block7: "X",
+	block8: "X",
+	block9: "X"
+    }
+    var board2 = {
+	block1: "",
+	block2: "",
+	block3: "",
+	block4: "",
+	block5: "",
+	block6: "",
+	block7: "",
+	block8: "",
+	block9: ""
+    }
+    var board3 = {
+	block1: "O",
+	block2: "",
+	block3: "X",
+	block4: "X",
+	block5: "O",
+	block6: "X",
+	block7: "X",
+	block8: "",
+	block9: "O"
+    }
+    var board4 = {
+	block1: "X",
+	block2: "X",
+	block3: "X",
+	block4: "O",
+	block5: "O",
+	block6: "X",
+	block7: "X",
+	block8: "O",
+	block9: "O"
+    }
+    var board5 = {
+	block1: "X",
+	block2: "",
+	block3: "",
+	block4: "X",
+	block5: "O",
+	block6: "X",
+	block7: "O",
+	block8: "O",
+	block9: "O"
+    }
+
+    QUnit.test("check result test", function(assert) {
+    	assert.equal(checkResult(board1), "X");
+    	assert.equal(checkResult(board2), "");
+    	assert.equal(checkResult(board3), "O");
+    	assert.equal(checkResult(board4), "X");
+    	assert.equal(checkResult(board5), "O");
+    	
+
+    })
+	</script>
+</head>
+<body>
+  <div id="qunit"></div>
+
+</body>
+</html>

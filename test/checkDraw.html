@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
+	<script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
+	<script src="checkDraw.js"></script>
+	<script>
+	var board = {
+	block1: "X",
+	block2: "X",
+	block3: "X",
+	block4: "X",
+	block5: "X",
+	block6: "X",
+	block7: "X",
+	block8: "X",
+	block9: "X"
+    }
+
+    QUnit.test("check draw test", function(assert) {
+    	assert.equal(checkDraw(board), true);
+    	board.block1 = "";
+    	assert.equal(checkDraw(board), false);
+    	board.block3 = "";
+    	assert.equal(checkDraw(board), false);
+    	board.block3 = "O";
+    	board.block1 = "O";
+    	board.block7 = "O";
+    	assert.equal(checkDraw(board), true);
+    	
+
+    })
+	</script>
+</head>
+<body>
+  <div id="qunit"></div>
+
+</body>
+</html>
